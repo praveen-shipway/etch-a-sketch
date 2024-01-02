@@ -9,3 +9,8 @@ for (let i = 0; i < 16; i++) {
 	}
 	container.appendChild(row);
 }
+
+let boxes = document.getElementsByClassName('box');
+Array.from(boxes).forEach(box => box.addEventListener('mouseover', function () {
+	this.style.backgroundColor = 'black';
+}));
