@@ -28,6 +28,10 @@ btn.addEventListener('click', function () {
 
 	let boxes = document.getElementsByClassName('box');
 	Array.from(boxes).forEach(box => box.addEventListener('mouseover', function () {
-		this.style.backgroundColor = 'black';
+		this.style.backgroundColor = `rgb(${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()})`;
 	}));
 });
+
+function getRandomColorValue() {
+	return Math.random() * 255;
+}
