@@ -28,7 +28,15 @@ btn.addEventListener('click', function () {
 
 	let boxes = document.getElementsByClassName('box');
 	Array.from(boxes).forEach(box => box.addEventListener('mouseover', function () {
-		this.style.backgroundColor = `rgb(${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()})`;
+		let currentColor = this.style.backgroundColor;
+		if (!currentColor) {
+			this.style.backgroundColor = 'rgb(229.5, 229.5, 229.5)';
+		} else {
+			let currentColorArr = currentColor.slice(4, currentColor.length -1).split(", ");
+			let newColorArr = currentColorArr.map(color => color-25.5);
+			let newColor = newColorArr.join(", ");
+			this.style.backgroundColor = `rgb(${newColor})`;
+		}
 	}));
 });
 
